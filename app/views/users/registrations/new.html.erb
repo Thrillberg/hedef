@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="well col-lg-5">
+    <h2>Registration for New Teams</h2>
+
+    <%= form_for(resource, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="form-group">
+        <%= f.email_field :email, class: 'form-control', autofocus: true, placeholder: 'your email (team admin)' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.password_field :password, class: 'form-control', autocomplete: "off", placeholder: 'password' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "off", placeholder: 'confirm password' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.fields_for :teams do |t| %>
+          <%= t.text_field :name, class: 'form-control', autocomplete: 'off', placeholder: 'team name (make it good!)' %>
+        <% end %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class: "btn btn-default" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="well col-lg-6 col-lg-offset-1">
+    Please use this form to register your new team. If you wish to join a team, please follow the link from your e-mail.
+  </div>
+</div>

@@ -12,4 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require_tree .
+
+$(document).on("click", "#btnLinkCreate", function(){
+  var $newTextbox = $("<input></input>");
+  $newTextbox.attr({type: 'textbox', placeholder: 'Invitation email', name: "user[email][]"});
+  $('#createNewTextbox').append($newTextbox);
+});
+
+$(document).on("click", "#btnLinkDestroy", function(){
+  $("input[type=textbox]:last").fadeOut(300, function() {$(this).remove(); });
+});

@@ -11,10 +11,19 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
+gem 'devise_invitable'
+gem 'rspec'
+gem 'twitter-bootstrap-rails'
+gem 'whenever'
+gem 'rest-client'
+# gem 'letter_opener'
+# gem 'launchy'
 
 
 group :development, :test do
   gem 'pry'
+  # gem 'letter_opener'
+  # gem 'launchy'
 end
 
 group :development do
