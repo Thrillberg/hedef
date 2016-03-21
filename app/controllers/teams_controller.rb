@@ -1,7 +1,8 @@
 class TeamsController < ApplicationController
+  
+  before_action :authenticate_user!, only: :show
+  
   def show
-    unless user_signed_in?
-      redirect_to root_path
-    end
   end
+
 end
