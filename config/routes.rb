@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :teams, only: [:show]
 
-  post 'reports', to: 'reports#get_logs'
+  match 'reports', to: 'reports#get_logs', format: [:get, :post]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

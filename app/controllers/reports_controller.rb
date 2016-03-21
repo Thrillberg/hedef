@@ -10,8 +10,7 @@ class ReportsController < ApplicationController
   end
 
   def get_logs
-    RestClient.get Rails.application.secrets["mailgun_key"]\
+    result = RestClient.get "#{Rails.application.secrets['mailgun_key']}"\
     "@api.mailgun.net/v3/erictillberg.com/events"
-    binding.pry
   end
 end
